@@ -3,13 +3,18 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace ExampleModNS
+namespace SlowModNS
 {
-    public class ExampleMod : Mod
+    public class SlowMod : Mod
     {
+        public void Awake() 
+        {
+            this.Harmony.PatchAll(typeof(Patches));
+        }
+        
         public override void Ready()
         {
-            Logger.Log("Ready!");
+            
         }
-    }
+    }	
 }
